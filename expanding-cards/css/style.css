@@ -52,6 +52,7 @@ body {
 /* If the panel is active display the h3 */
 .panel.active h3 {
   opacity: 1;
+  transition: opacity 1.2s ease-in;
 }
 
 /* If the viewport is small display only 3 cards, omit 4th and 5th */
