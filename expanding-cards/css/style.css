@@ -12,4 +12,56 @@ body {
   justify-content: center;
   margin: 0;
   height: 100vh;
+  background-color: beige;
+  color: brown;
+}
+
+/* Set the flex property for all the cards */
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+/* Set common properties for all the Cards */
+.panel {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  border-radius: 50px;
+  position: relative;
+  flex: 0.5;
+  transition: flex 0.7s ease-in;
+  cursor: pointer;
+}
+
+.panel h3 {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 24px;
+  opacity: 0;
+}
+
+/* If the panel is active increase the width of the panel */
+.panel.active {
+  flex: 5;
+}
+
+/* If the panel is active display the h3 */
+.panel.active h3 {
+  opacity: 1;
+}
+
+/* If the viewport is small display only 3 cards, omit 4th and 5th */
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
 }
